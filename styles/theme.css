@@ -1,0 +1,12 @@
+body {
+    background: linear-gradient(135deg, #0F172A, #1E293B);
+    font-family: 'Poppins', sans-serif;
+    color: white;
+}
+
+.stButton>button {
+    background-color: #06B6D4;
+    color: black;
+    border-radius: 10px;
+    font-weight: bold;
+}
