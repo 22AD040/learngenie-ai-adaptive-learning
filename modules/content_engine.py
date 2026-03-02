@@ -1,10 +1,8 @@
 from groq import Groq
-import os
-from dotenv import load_dotenv
+import streamlit as st
 
-load_dotenv()
-
-client = Groq(api_key=os.getenv("GROQ_API_KEY"))
+# Use Streamlit secrets (works in deployment)
+client = Groq(api_key=st.secrets["GROQ_API_KEY"])
 
 def generate_content(topic, level, mode):
 
