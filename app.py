@@ -50,7 +50,6 @@ if not st.session_state.logged_in:
             if username in users and users[username]["password"] == password:
                 st.session_state.logged_in = True
                 st.session_state.username = username
-                st.success("Login successful")
                 st.rerun()
             else:
                 st.error("Invalid credentials")
@@ -65,7 +64,6 @@ else:
     st.write(f"Welcome, {st.session_state.username}")
 
     phase = st.selectbox("Select Phase", ["School", "College"])
-
     topic = st.text_input("Enter Topic")
     level = st.selectbox("Select Difficulty Level", ["Beginner", "Intermediate", "Advanced"])
 
@@ -93,43 +91,48 @@ else:
 
         st.subheader("Answer the Quiz")
 
-        user_answers = {}
+        total_questions = len(st.session_state.quiz_data["questions"])
 
         for i, q in enumerate(st.session_state.quiz_data["questions"]):
-            st.write(f"**Q{i+1}: {q['question']}**")
 
-            user_choice = st.radio(
-                f"Select answer for Q{i+1}",
+            st.write(f"### Q{i+1}: {q['question']}")
+
+            st.radio(
+                "Select your answer:",
                 q["options"],
                 index=None,
                 key=f"q_{i}"
             )
 
-            user_answers[i] = user_choice
-
         if st.button("Submit Quiz"):
 
             score = 0
+            st.markdown("---")
 
             for i, q in enumerate(st.session_state.quiz_data["questions"]):
-                if user_answers[i] == q["answer"]:
+
+                user_answer = st.session_state.get(f"q_{i}")
+                correct_answer = q["answer"]
+
+                if user_answer == correct_answer:
                     score += 1
+                    st.success(f"Q{i+1} ✅ Correct")
+                else:
+                    st.error(f"Q{i+1} ❌ Wrong")
+                    st.info(f"Correct Answer: {correct_answer}")
 
-            total = len(st.session_state.quiz_data["questions"])
-            percentage = (score / total) * 100
+            percentage = (score / total_questions) * 100
 
-            st.success(f"Your Score: {score}/{total}")
+            st.markdown("## 🎯 Final Result")
+            st.success(f"Score: {score}/{total_questions}")
             st.info(f"Percentage: {percentage}%")
 
             new_level = update_level(percentage)
             st.warning(f"Recommended Level: {new_level}")
 
-            # Update user level in memory
             users[st.session_state.username]["level"] = new_level
 
     # ========== LOGOUT ==========
     if st.button("Logout"):
-        st.session_state.logged_in = False
-        st.session_state.quiz_data = None
-        st.session_state.username = None
+        st.session_state.clear()
         st.rerun()
