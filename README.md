@@ -1,4 +1,16 @@
+![Python](https://img.shields.io/badge/Python-3.10-blue)
+![Streamlit](https://img.shields.io/badge/Streamlit-App-red)
+![Generative AI](https://img.shields.io/badge/Generative-AI-purple)
+![Machine Learning](https://img.shields.io/badge/Machine-Learning-green)
+![License](https://img.shields.io/badge/License-MIT-yellow)
+
 # 🧠 LearnGenie AI – Adaptive Generative AI Learning Platform
+
+LearnGenie AI is an **adaptive AI-powered learning platform** that generates personalized study materials, quizzes, and interactive mind maps using **Generative AI and machine learning techniques**.
+
+The platform analyzes the learner’s topic input and automatically produces structured learning content, evaluates understanding through quizzes, and visualizes knowledge using mind maps.
+
+The goal of the project is to create an **intelligent learning assistant** that helps students understand complex topics faster through **AI-generated explanations, adaptive learning paths, and visual knowledge representation**.# 🧠 LearnGenie AI – Adaptive Generative AI Learning Platform
 
 LearnGenie AI is an **adaptive AI-powered learning platform** that generates personalized study materials, quizzes, and interactive mind maps using **Generative AI and machine learning techniques**.
 
