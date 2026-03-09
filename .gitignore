@@ -1,4 +1,46 @@
-venv/
-.env
+# Python cache
 __pycache__/
-database/users.json
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environment
+venv/
+.env/
+.env
+
+# VS Code
+.vscode/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Python build
+build/
+dist/
+*.egg-info/
+
+# Logs
+*.log
+
+# Streamlit cache
+.streamlit/
+
+# Temporary files
+*.tmp
+*.temp
+
+# Generated PDFs
+study_material_*.pdf
+
+# Database backups
+*.db
+*.sqlite3
+
+# Jupyter checkpoints
+.ipynb_checkpoints/
+
+# Environment config
+.env.local
+.env.production

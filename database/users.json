@@ -1,0 +1,55 @@
+{
+    "ratch21": {
+        "password": "2105",
+        "level": "Advanced",
+        "history": [],
+        "scores": [],
+        "streak": 1
+    },
+    "kanish25": {
+        "password": "2505",
+        "name": "Kanihska Shree D",
+        "education": "School",
+        "std": "12",
+        "stream": null,
+        "dept": null,
+        "level": "Beginner",
+        "history": [
+            "Maths",
+            "english",
+            "LLM",
+            "NUMPY,PANDAS",
+            "gen ai",
+            "law",
+            "python",
+            "Gen AI",
+            "tamil",
+            "GEN AI",
+            [],
+            "Mathematics",
+            "Python Programming"
+        ],
+        "scores": [
+            100.0,
+            40.0
+        ],
+        "streak": 1
+    },
+    "ragsheya15": {
+        "password": "1511",
+        "name": "Ragsheya B",
+        "education": "College",
+        "std": null,
+        "stream": "Engineering",
+        "dept": "Artificial Intelligence and Data Science",
+        "level": "Advanced",
+        "history": [
+            "Gen AI"
+        ],
+        "scores": [
+            60.0,
+            100.0
+        ],
+        "streak": 1
+    }
+}

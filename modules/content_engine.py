@@ -1,26 +1,34 @@
 from groq import Groq
+import os
+from dotenv import load_dotenv
 import streamlit as st
 
-# Use Streamlit secrets (works in deployment)
-client = Groq(api_key=st.secrets["GROQ_API_KEY"])
+load_dotenv()
+
+api_key = os.getenv("GROQ_API_KEY")
+
+client = Groq(api_key=api_key)
 
 def generate_content(topic, level, mode):
 
     prompt = f"""
-    You are an AI teacher.
+You are an AI teacher.
 
-    Create structured study material for:
+Create structured study material for the following:
 
-    Topic: {topic}
-    Level: {level}
-    Mode: {mode} (School or College)
+Topic: {topic}
+Level: {level}
+Education Mode: {mode}
 
-    Include:
-    - Explanation
-    - Examples
-    - Key Points
-    - Summary
-    """
+Include the following sections clearly:
+
+1. Explanation
+2. Examples
+3. Key Points
+4. Summary
+
+Make the explanation easy to understand for the selected level.
+"""
 
     response = client.chat.completions.create(
         model="llama-3.1-8b-instant",
